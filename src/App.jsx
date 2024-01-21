@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import Home from "./components/Home";
+import About from "./components/About";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -35,7 +36,7 @@ p, h1, h2, h3, h4, h5, h6 {
 `;
 
 const AppContainer = styled.div`
-  background-color: #ebf8ff;
+  background-color: #eeeeee;
   height: 100vh;
 `;
 
@@ -45,6 +46,7 @@ function App() {
       <GlobalStyle />
       <AppContainer>
         <Home />
+        <About />
       </AppContainer>
     </>
   );
