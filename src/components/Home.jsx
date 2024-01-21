@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Nav from "./Nav";
 import { svgDownArrow } from "../svgImages";
+import ScrollReveal from "scrollreveal";
+import { useEffect } from "react";
 
 const Header = styled.div`
   padding-left: 2.5rem;
@@ -73,14 +75,23 @@ const DownArrow = styled.div`
 `;
 
 function Home() {
+  useEffect(() => {
+    ScrollReveal().reveal(".text", {
+      reset: false,
+      duration: 900,
+      easing: "cubic-bezier(.694,0,.335,1)",
+      scale: 1,
+      viewFactor: 0.3,
+    });
+  }, []);
   return (
     <>
-      <Header>
+      <Header className="header">
         <Title>HA</Title>
         <Nav />
       </Header>
       <Content>
-        <TextContainer>
+        <TextContainer className="text">
           <Text>Hi!</Text>
           <p>My name is Hussain.</p>
           <p>Software Engineer from New York.</p>
