@@ -36,7 +36,7 @@ p, h1, h2, h3, h4, h5, h6 {
 `;
 
 const AppContainer = styled.div`
-  background-color: #eeeeee;
+  background-color: #fffefe;
   height: 100vh;
 `;
 
