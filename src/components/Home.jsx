@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Nav from "./Nav";
 import { svgDownArrow } from "../svgImages";
 import ScrollReveal from "scrollreveal";
@@ -33,7 +33,13 @@ const TextContainer = styled.div`
 `;
 
 const Text = styled.p`
-  padding-bottom: 4rem;
+  padding-bottom: 2.5rem;
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-family: "Rock Salt", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 1.5rem;
 `;
 
 const DownArrow = styled.div`
@@ -92,9 +98,8 @@ function Home() {
       </Header>
       <Content>
         <TextContainer className="text">
-          <Text>Hi!</Text>
-          <p>My name is Hussain.</p>
-          <p>Software Engineer from New York.</p>
+          <p>Hi! My name is</p>
+          <Text>Hussain Ali</Text>
         </TextContainer>
       </Content>
       <DownArrow>
