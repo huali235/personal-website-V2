@@ -1,5 +1,4 @@
-import styled, { keyframes } from "styled-components";
-import Nav from "./Nav";
+import styled, {keyframes} from "styled-components";
 import { svgDownArrow } from "../svgImages";
 import ScrollReveal from "scrollreveal";
 import { useEffect } from "react";
@@ -23,7 +22,9 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   font-family: "Gelasio", serif;
-  font-size: 3rem;
+  font-size: 1.5rem;
+  padding-left: 2.5rem;
+  max-width: 100%;
 `;
 
 const TextContainer = styled.div`
@@ -32,14 +33,27 @@ const TextContainer = styled.div`
   margin-left: -10rem;
 `;
 
-const Text = styled.p`
-  padding-bottom: 2.5rem;
-  font-size: 8rem;
-  text-transform: uppercase;
-  font-family: "Rock Salt", cursive;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: 1.5rem;
+const fadeInZoomIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+// Styled component for the zoom-in text animation
+const ZoomInText = styled.span`
+  font-family: "Montserrat", sans-serif;
+  letter-spacing : -0.5rem;
+  color: #475569;
+  font-size: 10rem;
+  display: inline-block;
+  margin-bottom: 3rem;
+  opacity: 0; /* Start hidden */
+  animation: ${fadeInZoomIn} 2s ease-out forwards; /* 2s animation duration */
 `;
 
 const DownArrow = styled.div`
@@ -94,12 +108,14 @@ function Home() {
     <>
       <Header className="header">
         <Title>HA</Title>
-        <Nav />
       </Header>
       <Content>
         <TextContainer className="text">
-          <p>Hi! My name is</p>
-          <Text>Hussain Ali</Text>
+          <p>Hi! I'm</p>
+          <ZoomInText>Hussain Ali</ZoomInText>
+          <p>
+            An aspiring software engineer who loves creating things on the web.
+          </p>
         </TextContainer>
       </Content>
       <DownArrow>
