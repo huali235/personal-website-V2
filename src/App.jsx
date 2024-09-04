@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import Home from "./components/Home";
 import About from "./components/About";
+import Skills from "./components/Skills";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -47,6 +48,7 @@ function App() {
       <AppContainer>
         <Home />
         <About />
+        <Skills/>
       </AppContainer>
     </>
   );
