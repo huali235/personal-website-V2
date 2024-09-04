@@ -1,7 +1,8 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { svgDownArrow } from "../svgImages";
 import ScrollReveal from "scrollreveal";
 import { useEffect } from "react";
+import { BaseContainer } from "../styles/sharedStyles";
 
 const Header = styled.div`
   padding-left: 2.5rem;
@@ -47,7 +48,7 @@ const fadeInZoomIn = keyframes`
 // Styled component for the zoom-in text animation
 const ZoomInText = styled.span`
   font-family: "Montserrat", sans-serif;
-  letter-spacing : -0.5rem;
+  letter-spacing: -0.5rem;
   color: #475569;
   font-size: 10rem;
   display: inline-block;
@@ -71,6 +72,9 @@ const DownArrow = styled.div`
    */
     background-image: url(${svgDownArrow});
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    fill: #a3e635;
   }
 
   .bounce {
@@ -105,7 +109,7 @@ function Home() {
     });
   }, []);
   return (
-    <>
+    <BaseContainer>
       <Header className="header">
         <Title>HA</Title>
       </Header>
@@ -121,7 +125,7 @@ function Home() {
       <DownArrow>
         <div className="arrow bounce"></div>
       </DownArrow>
-    </>
+    </BaseContainer>
   );
 }
 
