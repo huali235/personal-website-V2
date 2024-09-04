@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -37,7 +38,7 @@ p, h1, h2, h3, h4, h5, h6 {
 `;
 
 const AppContainer = styled.div`
-  background-color: #fffefe;
+  background-color: black;
   height: 100vh;
 `;
 
@@ -48,7 +49,8 @@ function App() {
       <AppContainer>
         <Home />
         <About />
-        <Skills/>
+        <Skills />
+        <Projects />
       </AppContainer>
     </>
   );
