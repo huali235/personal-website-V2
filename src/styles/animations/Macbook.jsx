@@ -1,20 +1,22 @@
 import "./Macbook.css";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 function Macbook() {
   const macbookRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !hasAnimated) {
+          console.log("Intersecting");
           entry.target.classList.add("animate");
-        } else {
-          entry.target.classList.remove("animate");
+          setHasAnimated(true);
+          observer.unobserve(entry.target); // Stop observing after the first trigger
         }
       },
       {
-        threshold: 0.5, // Adjust this value as needed
+        threshold: 0.5,
       }
     );
 
@@ -27,7 +29,7 @@ function Macbook() {
         observer.unobserve(macbookRef.current);
       }
     };
-  }, []);
+  }, [hasAnimated]);
 
   return (
     <div class="container">
