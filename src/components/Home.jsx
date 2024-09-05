@@ -74,7 +74,6 @@ const DownArrow = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    fill: #a3e635;
   }
 
   .bounce {

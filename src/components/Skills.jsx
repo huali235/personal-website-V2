@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { Heading, Container } from "../styles/sharedStyles";
 import { BaseContainer } from "../styles/sharedStyles";
 
+const SkillsContainer = styled(BaseContainer)`
+  margin-top: -8rem;
+`;
+
 const ListContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -22,7 +26,7 @@ const ListTitle = styled.h2`
 
 function Skills() {
   return (
-    <BaseContainer>
+    <SkillsContainer>
       <Container>
         <Heading>Skills</Heading>
         <p>A few technologies I've been working with recently</p>
@@ -59,7 +63,7 @@ function Skills() {
           </List>
         </ListContainer>
       </Container>
-    </BaseContainer>
+    </SkillsContainer>
   );
 }
 
