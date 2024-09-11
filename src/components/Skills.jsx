@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Heading, Container } from "../styles/sharedStyles";
+import { Heading } from "../styles/sharedStyles";
 import { BaseContainer } from "../styles/sharedStyles";
 
 const SkillsContainer = styled(BaseContainer)`
@@ -27,42 +27,40 @@ const ListTitle = styled.h2`
 function Skills() {
   return (
     <SkillsContainer>
-      <Container>
-        <Heading>Skills</Heading>
-        <p>A few technologies I've been working with recently</p>
-        <ListContainer>
-          <List>
-            <ListTitle>Languages</ListTitle>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript (ES6)</li>
-              <li>TypeScript</li>
-              <li>Python</li>
-            </ul>
-          </List>
+      <Heading>Skills</Heading>
+      <p>A few technologies I've been working with recently</p>
+      <ListContainer>
+        <List>
+          <ListTitle>Languages</ListTitle>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript (ES6)</li>
+            <li>TypeScript</li>
+            <li>Python</li>
+          </ul>
+        </List>
 
-          <List>
-            <ListTitle>Frameworks/Libraries</ListTitle>
-            <ul>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Node.js</li>
-              <li>Express</li>
-            </ul>
-          </List>
+        <List>
+          <ListTitle>Frameworks/Libraries</ListTitle>
+          <ul>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>Node.js</li>
+            <li>Express</li>
+          </ul>
+        </List>
 
-          <List>
-            <ListTitle>Tools</ListTitle>
-            <ul>
-              <li>Parcel</li>
-              <li>Bash</li>
-              <li>Git/Github</li>
-              <li>Chrome Dev Tools</li>
-            </ul>
-          </List>
-        </ListContainer>
-      </Container>
+        <List>
+          <ListTitle>Tools</ListTitle>
+          <ul>
+            <li>Parcel</li>
+            <li>Bash</li>
+            <li>Git/Github</li>
+            <li>Chrome Dev Tools</li>
+          </ul>
+        </List>
+      </ListContainer>
     </SkillsContainer>
   );
 }

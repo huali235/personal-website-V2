@@ -8,15 +8,26 @@ font-family: "Montserrat", sans-serif;
   color: #0284c7;
 `;
 
-export const Container = styled.div`
-font-family: "Montserrat", sans-serif;
+// export const Container = styled.div`
+// font-family: "Montserrat", sans-serif;
+//   padding-right: 2.5rem;
+//   padding-left: 2.5rem;
+//   padding-top: 8rem;
+//   padding-bottom: 12rem;
+// `;
+
+export const BaseContainer = styled.div`
+  background-color: #fff;
+  color: black;
+  font-family: "Montserrat", sans-serif;
   padding-right: 2.5rem;
   padding-left: 2.5rem;
   padding-top: 8rem;
   padding-bottom: 12rem;
 `;
 
-export const BaseContainer = styled.div`
-  background-color: #fff;
-  color: black;
+export const SectionDescription = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
+

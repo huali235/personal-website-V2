@@ -4,12 +4,16 @@ import ScrollReveal from "scrollreveal";
 import { useEffect } from "react";
 import { BaseContainer } from "../styles/sharedStyles";
 
-const Header = styled.div`
-  padding-left: 2.5rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  display: flex;
-  justify-content: space-between;
+// const Header = styled.div`
+//   padding-left: 2.5rem;
+//   padding-top: 1.25rem;
+//   padding-bottom: 1.25rem;
+//   display: flex;
+//   justify-content: space-between;
+// `;
+
+const BaseContainerHome = styled(BaseContainer)`
+  padding-top: 0;
 `;
 
 const Title = styled.p`
@@ -108,10 +112,8 @@ function Home() {
     });
   }, []);
   return (
-    <BaseContainer>
-      <Header className="header">
-        <Title>HA</Title>
-      </Header>
+    <BaseContainerHome>
+      <Title>HA</Title>
       <Content>
         <TextContainer className="text">
           <p>Hi! I'm</p>
@@ -124,7 +126,7 @@ function Home() {
       <DownArrow>
         <div className="arrow bounce"></div>
       </DownArrow>
-    </BaseContainer>
+    </BaseContainerHome>
   );
 }
 
