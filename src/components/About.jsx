@@ -18,9 +18,11 @@ const HeadingDescription = styled.p`
   font-weight: 600;
 `;
 
+const AboutContainer = styled(BaseContainer)``;
+
 function About() {
   return (
-    <BaseContainer>
+    <AboutContainer id="about">
       <AboutGrid>
         <div>
           <Heading>About Me</Heading>
@@ -43,7 +45,7 @@ function About() {
           family.
         </Text>
       </AboutGrid>
-    </BaseContainer>
+    </AboutContainer>
   );
 }
 

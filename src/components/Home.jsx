@@ -105,8 +105,9 @@ const DownArrow = styled.div`
 const ParentContainer = styled.div`
   display: flex;
   justify-content: flex-end; /* Align the navbar to the right */
+  width: 100%;
   background-color: #fff;
-  padding: 1rem 2rem;
+  padding: 0;
 `;
 
 function Home() {

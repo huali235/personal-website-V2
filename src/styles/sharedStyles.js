@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Heading = styled.h1`
-font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   display: flex;
   font-size: 1.2rem;
@@ -23,7 +23,7 @@ export const BaseContainer = styled.div`
   padding-right: 2.5rem;
   padding-left: 2.5rem;
   padding-top: 8rem;
-  padding-bottom: 12rem;
+  padding-bottom: 5rem;
 `;
 
 export const SectionDescription = styled.div`
@@ -31,3 +31,18 @@ export const SectionDescription = styled.div`
   flex-direction: column;
 `;
 
+export const IconLinks = styled.div`
+  display: flex;
+  gap: 1rem;
+  padding-left: 1rem;
+`;
+
+export const IconLink = styled.a`
+  color: black;
+  font-size: 2rem;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #0284c7;
+  }
+`;

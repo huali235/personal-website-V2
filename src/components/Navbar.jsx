@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { IconLink, IconLinks } from "../styles/sharedStyles";
 
 const NavbarContainer = styled.nav`
   display: flex;
@@ -23,25 +24,6 @@ const NavLink = styled.li`
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s;
-
-    &:hover {
-      color: #ffeb3b;
-    }
-  }
-`;
-
-const IconLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
-const IconLink = styled.a`
-  color: black;
-  font-size: 1.5rem;
-  transition: color 0.3s;
-
-  &:hover {
-    color: #ffeb3b;
   }
 `;
 
@@ -61,14 +43,14 @@ const Navbar = () => {
       </NavLinks>
       <IconLinks>
         <IconLink
-          href="https://github.com/yourusername"
+          href="https://github.com/huali235"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faGithub} />
         </IconLink>
         <IconLink
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/hussain-ali-6ab559298/"
           target="_blank"
           rel="noopener noreferrer"
         >

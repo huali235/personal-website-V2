@@ -4,12 +4,13 @@ import { BaseContainer } from "../styles/sharedStyles";
 
 const SkillsContainer = styled(BaseContainer)`
   margin-top: -8rem;
+  background-color: #e0f2fe;
 `;
 
 const ListContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 1rem;
+  margin-top: 2rem;
 `;
 
 const List = styled.div`
@@ -26,7 +27,7 @@ const ListTitle = styled.h2`
 
 function Skills() {
   return (
-    <SkillsContainer>
+    <SkillsContainer id="skills">
       <Heading>Skills</Heading>
       <p>A few technologies I've been working with recently</p>
       <ListContainer>

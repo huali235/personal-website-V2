@@ -53,6 +53,8 @@ const Project3 = styled.div`
   grid-column: 2;
 `;
 
+const ProjectsContainer = styled(BaseContainer)``;
+
 function Projects() {
   const videoRef1 = useRef(null);
   const videoRef2 = useRef(null);
@@ -124,7 +126,7 @@ function Projects() {
   }, []);
 
   return (
-    <BaseContainer>
+    <ProjectsContainer id="projects">
       <SectionDescription>
         <Heading>Projects</Heading>
         <p>What I'm currently noodling on</p>
@@ -185,7 +187,7 @@ function Projects() {
           </VideoDescriptionContainer>
         </Project3>
       </GridContainer>
-    </BaseContainer>
+    </ProjectsContainer>
   );
 }
 
