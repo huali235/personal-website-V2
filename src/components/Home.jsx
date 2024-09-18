@@ -3,6 +3,7 @@ import { svgDownArrow } from "../svgImages";
 import ScrollReveal from "scrollreveal";
 import { useEffect } from "react";
 import { BaseContainer } from "../styles/sharedStyles";
+import Navbar from "./Navbar";
 
 // const Header = styled.div`
 //   padding-left: 2.5rem;
@@ -101,6 +102,13 @@ const DownArrow = styled.div`
   }
 `;
 
+const ParentContainer = styled.div`
+  display: flex;
+  justify-content: flex-end; /* Align the navbar to the right */
+  background-color: #fff;
+  padding: 1rem 2rem;
+`;
+
 function Home() {
   useEffect(() => {
     ScrollReveal().reveal(".text", {
@@ -113,8 +121,10 @@ function Home() {
   }, []);
   return (
     <BaseContainerHome>
-      <Title>HA</Title>
       <Content>
+        <ParentContainer>
+          <Navbar />
+        </ParentContainer>
         <TextContainer className="text">
           <p>Hi! I'm</p>
           <ZoomInText>Hussain Ali</ZoomInText>
