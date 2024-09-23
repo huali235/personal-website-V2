@@ -5,6 +5,7 @@ import { BaseContainer } from "../styles/sharedStyles";
 const SkillsContainer = styled(BaseContainer)`
   margin-top: -8rem;
   background-color: #e0f2fe;
+  padding-top: 4rem;
 `;
 
 const ListContainer = styled.div`
