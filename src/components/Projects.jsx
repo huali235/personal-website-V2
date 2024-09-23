@@ -43,6 +43,10 @@ const ThirdVideo = styled(Video)`
   max-width: 800px;
 `;
 
+const FourthVideo = styled(Video)`
+  max-width: 800px;
+`;
+
 const Project2 = styled.div`
   grid-row: 2;
   grid-column: 1;
@@ -53,12 +57,18 @@ const Project3 = styled.div`
   grid-column: 2;
 `;
 
+const Project4 = styled.div`
+  grid-row: 3;
+  grid-column: 1;
+`;
+
 const ProjectsContainer = styled(BaseContainer)``;
 
 function Projects() {
   const videoRef1 = useRef(null);
   const videoRef2 = useRef(null);
   const videoRef3 = useRef(null);
+  const videoRef4 = useRef(null);
 
   useEffect(() => {
     const observer1 = new IntersectionObserver(
@@ -100,6 +110,19 @@ function Projects() {
       }
     );
 
+    const observer4 = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          videoRef4.current.play();
+        } else {
+          videoRef4.current.pause();
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
     if (videoRef1.current) {
       observer1.observe(videoRef1.current);
     }
@@ -112,6 +135,10 @@ function Projects() {
       observer3.observe(videoRef3.current);
     }
 
+    if (videoRef4.current) {
+      observer4.observe(videoRef4.current);
+    }
+
     return () => {
       if (videoRef1.current) {
         observer1.unobserve(videoRef1.current);
@@ -121,6 +148,9 @@ function Projects() {
       }
       if (videoRef3.current) {
         observer3.unobserve(videoRef3.current);
+      }
+      if (videoRef4.current) {
+        observer4.unobserve(videoRef4.current);
       }
     };
   }, []);
@@ -186,6 +216,17 @@ function Projects() {
             <p>Simple Todo List while learning NextJS</p>
           </VideoDescriptionContainer>
         </Project3>
+        <Project4>
+          <FourthVideo ref={videoRef4} loop muted>
+            <source src="/videos/world-wise-react-video.mp4" type="video/mp4" />
+          </FourthVideo>
+          <VideoDescriptionContainer>
+            <Tag bgColor="#3178C6" color="white">
+              React
+            </Tag>
+            <p>Explore the places you have visited</p>
+          </VideoDescriptionContainer>
+        </Project4>
       </GridContainer>
     </ProjectsContainer>
   );
