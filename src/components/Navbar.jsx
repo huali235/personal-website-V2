@@ -16,6 +16,7 @@ const NavLinks = styled.ul`
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  align-items: center;
 `;
 
 const NavLink = styled.li`

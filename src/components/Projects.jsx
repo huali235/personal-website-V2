@@ -16,12 +16,19 @@ const GridContainer = styled(BaseContainer)`
   grid-template-rows: 1fr 1fr;
   margin-top: 1rem;
   padding: 0rem;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 const VideoDescriptionContainer = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+  }
 `;
 
 const Tag = styled.span`
@@ -33,6 +40,9 @@ const Tag = styled.span`
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: bold;
+  @media (max-width: 768px) {
+    padding: 0.25rem 0.5rem;
+  }
 `;
 
 const SecondVideo = styled(Video)`
@@ -65,95 +75,38 @@ const Project4 = styled.div`
 const ProjectsContainer = styled(BaseContainer)``;
 
 function Projects() {
-  const videoRef1 = useRef(null);
-  const videoRef2 = useRef(null);
-  const videoRef3 = useRef(null);
-  const videoRef4 = useRef(null);
+  const videoRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
   useEffect(() => {
-    const observer1 = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          videoRef1.current.play();
-        } else {
-          videoRef1.current.pause();
+    const observers = videoRefs.map((videoRef) => {
+      return new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            videoRef.current.play();
+          } else {
+            videoRef.current.pause();
+          }
+        },
+        {
+          threshold: 0.5,
         }
-      },
-      {
-        threshold: 0.5,
+      );
+    });
+
+    videoRefs.forEach((videoRef, index) => {
+      if (videoRef.current) {
+        observers[index].observe(videoRef.current);
       }
-    );
-
-    const observer2 = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          videoRef2.current.play();
-        } else {
-          videoRef2.current.pause();
-        }
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    const observer3 = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          videoRef3.current.play();
-        } else {
-          videoRef3.current.pause();
-        }
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    const observer4 = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          videoRef4.current.play();
-        } else {
-          videoRef4.current.pause();
-        }
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    if (videoRef1.current) {
-      observer1.observe(videoRef1.current);
-    }
-
-    if (videoRef2.current) {
-      observer2.observe(videoRef2.current);
-    }
-
-    if (videoRef3.current) {
-      observer3.observe(videoRef3.current);
-    }
-
-    if (videoRef4.current) {
-      observer4.observe(videoRef4.current);
-    }
+    });
 
     return () => {
-      if (videoRef1.current) {
-        observer1.unobserve(videoRef1.current);
-      }
-      if (videoRef2.current) {
-        observer2.unobserve(videoRef2.current);
-      }
-      if (videoRef3.current) {
-        observer3.unobserve(videoRef3.current);
-      }
-      if (videoRef4.current) {
-        observer4.unobserve(videoRef4.current);
-      }
+      videoRefs.forEach((videoRef, index) => {
+        if (videoRef.current) {
+          observers[index].unobserve(videoRef.current);
+        }
+      });
     };
-  }, []);
+  }, [videoRefs]);
 
   return (
     <ProjectsContainer id="projects">
@@ -163,7 +116,7 @@ function Projects() {
       </SectionDescription>
       <GridContainer>
         <div>
-          <Video ref={videoRef1} loop muted>
+          <Video ref={videoRefs[0]} loop muted>
             <source
               src="/videos/ip-address-tracker-video.mp4"
               type="video/mp4"
@@ -183,7 +136,7 @@ function Projects() {
           </VideoDescriptionContainer>
         </div>
         <Project2>
-          <SecondVideo ref={videoRef2} loop muted>
+          <SecondVideo ref={videoRefs[1]} loop muted>
             <source
               src="/videos/fast-react-pizza-recording.mp4"
               type="video/mp4"
@@ -200,7 +153,7 @@ function Projects() {
           </VideoDescriptionContainer>
         </Project2>
         <Project3>
-          <ThirdVideo ref={videoRef3} loop muted>
+          <ThirdVideo ref={videoRefs[2]} loop muted>
             <source
               src="/videos/todo-list-nextjs-recording.mp4"
               type="video/mp4"
@@ -217,7 +170,7 @@ function Projects() {
           </VideoDescriptionContainer>
         </Project3>
         <Project4>
-          <FourthVideo ref={videoRef4} loop muted>
+          <FourthVideo ref={videoRefs[3]} loop muted>
             <source src="/videos/world-wise-react-video.mp4" type="video/mp4" />
           </FourthVideo>
           <VideoDescriptionContainer>

@@ -6,19 +6,35 @@ import Macbook from "../styles/animations/Macbook";
 const Text = styled.p`
   font-size: 1rem;
   margin-top: 8rem;
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
 `;
 
 const AboutGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const HeadingDescription = styled.p`
   font-size: 2rem;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
-const AboutContainer = styled(BaseContainer)``;
+const AboutContainer = styled(BaseContainer)`
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+`;
 
 function About() {
   return (

@@ -6,24 +6,42 @@ const SkillsContainer = styled(BaseContainer)`
   margin-top: -8rem;
   background-color: #e0f2fe;
   padding-top: 4rem;
+
+  @media (max-width: 768px) {
+    margin-top: 4rem;
+    padding-top: 2rem;
+  }
 `;
 
 const ListContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
 `;
 
 const List = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
+
+  @media (max-width: 768px) {
+    align-content: stretch;
+  }
 `;
 
 const ListTitle = styled.h2`
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 function Skills() {

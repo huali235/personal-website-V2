@@ -31,6 +31,11 @@ const Content = styled.div`
   font-size: 1.5rem;
   padding-left: 2.5rem;
   max-width: 100%;
+
+  @media (max-width: 768px) {
+    padding-left: 8rem;
+    font-size: 1.25rem;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -60,6 +65,10 @@ const ZoomInText = styled.span`
   margin-bottom: 3rem;
   opacity: 0; /* Start hidden */
   animation: ${fadeInZoomIn} 2s ease-out forwards; /* 2s animation duration */
+
+  @media (max-width: 768px) {
+    font-size: 7rem;
+  }
 `;
 
 const DownArrow = styled.div`
