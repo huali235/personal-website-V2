@@ -40,8 +40,9 @@ p, h1, h2, h3, h4, h5, h6 {
 `;
 
 const AppContainer = styled.div`
-  background-color: black;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 `;
 
 function App() {

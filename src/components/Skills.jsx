@@ -21,6 +21,13 @@ const ListContainer = styled.div`
   @media (max-width: 768px) {
     margin-top: 1rem;
   }
+
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 const List = styled.div`
@@ -30,6 +37,10 @@ const List = styled.div`
 
   @media (max-width: 768px) {
     align-content: stretch;
+  }
+
+  @media (max-width: 425px) {
+    align-content: start;
   }
 `;
 

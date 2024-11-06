@@ -20,6 +20,11 @@ const GridContainer = styled(BaseContainer)`
   @media (max-width: 768px) {
     gap: 1rem;
   }
+
+  @media (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const VideoDescriptionContainer = styled.div`
@@ -28,6 +33,9 @@ const VideoDescriptionContainer = styled.div`
   align-items: center;
   @media (max-width: 768px) {
     gap: 0.5rem;
+  }
+  @media (max-width: 425px) {
+    gap: 0.2rem;
   }
 `;
 
@@ -40,6 +48,7 @@ const Tag = styled.span`
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: bold;
+  white-space: nowrap;
   @media (max-width: 768px) {
     padding: 0.25rem 0.5rem;
   }

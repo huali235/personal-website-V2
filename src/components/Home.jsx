@@ -36,12 +36,19 @@ const Content = styled.div`
     padding-left: 8rem;
     font-size: 1.25rem;
   }
+
+  @media (max-width: 425px) {
+    padding-left: 10rem;
+  }
 `;
 
 const TextContainer = styled.div`
   text-align: left;
   padding-top: 2rem;
   margin-left: -10rem;
+
+  @media (max-width: 425px) {
+  }
 `;
 
 const fadeInZoomIn = keyframes`
@@ -68,6 +75,11 @@ const ZoomInText = styled.span`
 
   @media (max-width: 768px) {
     font-size: 7rem;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 4rem;
+    letter-spacing: -0.3rem;
   }
 `;
 

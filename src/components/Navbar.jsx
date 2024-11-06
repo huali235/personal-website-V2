@@ -10,6 +10,10 @@ const NavbarContainer = styled.nav`
   padding: 1rem 2rem;
   background-color: #fff;
   color: black;
+
+  @media (max-width: 425px) {
+    margin-left: -12rem;
+  }
 `;
 
 const NavLinks = styled.ul`
@@ -51,7 +55,7 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faGithub} />
         </IconLink>
         <IconLink
-          href="https://www.linkedin.com/in/hussain-ali-6ab559298/"
+          href="https://www.linkedin.com/in/huali235/"
           target="_blank"
           rel="noopener noreferrer"
         >
