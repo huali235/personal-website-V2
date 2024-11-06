@@ -14,6 +14,10 @@ const NavbarContainer = styled.nav`
   @media (max-width: 425px) {
     margin-left: -12rem;
   }
+
+  @media (max-width: 375px) {
+    margin-left: -14rem;
+  }
 `;
 
 const NavLinks = styled.ul`
@@ -29,6 +33,10 @@ const NavLink = styled.li`
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s;
+
+    @media (max-width: 375px) {
+      font-size: 0.9rem;
+    }
   }
 `;
 

@@ -46,9 +46,6 @@ const TextContainer = styled.div`
   text-align: left;
   padding-top: 2rem;
   margin-left: -10rem;
-
-  @media (max-width: 425px) {
-  }
 `;
 
 const fadeInZoomIn = keyframes`
@@ -80,6 +77,10 @@ const ZoomInText = styled.span`
   @media (max-width: 425px) {
     font-size: 4rem;
     letter-spacing: -0.3rem;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 3.5rem;
   }
 `;
 
@@ -120,6 +121,10 @@ const DownArrow = styled.div`
     60% {
       transform: translateY(-15px);
     }
+  }
+
+  @media (max-width: 375px) {
+    margin-top: -2rem;
   }
 `;
 

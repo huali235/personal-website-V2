@@ -37,6 +37,11 @@ const VideoDescriptionContainer = styled.div`
   @media (max-width: 425px) {
     gap: 0.2rem;
   }
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    font-size: 0.875rem;
+  }
 `;
 
 const Tag = styled.span`
@@ -49,8 +54,15 @@ const Tag = styled.span`
   font-size: 0.875rem;
   font-weight: bold;
   white-space: nowrap;
+
   @media (max-width: 768px) {
     padding: 0.25rem 0.5rem;
+  }
+`;
+
+const TagContainer = styled.div`
+  @media (max-width: 375px) {
+    display: flex;
   }
 `;
 
@@ -132,12 +144,14 @@ function Projects() {
             />
           </Video>
           <VideoDescriptionContainer>
-            <Tag bgColor="#3178C6" color="white">
-              TypeScript
-            </Tag>
-            <Tag bgColor="#ffeb3b" color="#000">
-              React
-            </Tag>
+            <TagContainer>
+              <Tag bgColor="#3178C6" color="white">
+                TypeScript
+              </Tag>
+              <Tag bgColor="#ffeb3b" color="#000">
+                React
+              </Tag>
+            </TagContainer>
             <p>
               IP Address Tracker that displays location data of a given IP
               address
@@ -152,12 +166,14 @@ function Projects() {
             />
           </SecondVideo>
           <VideoDescriptionContainer>
-            <Tag bgColor="#3178C6" color="white">
-              React
-            </Tag>
-            <Tag bgColor="#ffeb3b" color="#000">
-              Tailwind CSS
-            </Tag>
+            <TagContainer>
+              <Tag bgColor="#3178C6" color="white">
+                React
+              </Tag>
+              <Tag bgColor="#ffeb3b" color="#000">
+                Tailwind CSS
+              </Tag>
+            </TagContainer>
             <p>Mock Pizza Ordering App</p>
           </VideoDescriptionContainer>
         </Project2>
@@ -169,12 +185,14 @@ function Projects() {
             />
           </ThirdVideo>
           <VideoDescriptionContainer>
-            <Tag bgColor="#3178C6" color="white">
-              NextJS
-            </Tag>
-            <Tag bgColor="#ffeb3b" color="#000">
-              Prisma
-            </Tag>
+            <TagContainer>
+              <Tag bgColor="#3178C6" color="white">
+                NextJS
+              </Tag>
+              <Tag bgColor="#ffeb3b" color="#000">
+                Prisma
+              </Tag>
+            </TagContainer>
             <p>Simple Todo List while learning NextJS</p>
           </VideoDescriptionContainer>
         </Project3>
@@ -183,9 +201,11 @@ function Projects() {
             <source src="/videos/world-wise-react-video.mp4" type="video/mp4" />
           </FourthVideo>
           <VideoDescriptionContainer>
-            <Tag bgColor="#3178C6" color="white">
-              React
-            </Tag>
+            <TagContainer>
+              <Tag bgColor="#3178C6" color="white">
+                React
+              </Tag>
+            </TagContainer>
             <p>Explore the places you have visited</p>
           </VideoDescriptionContainer>
         </Project4>
